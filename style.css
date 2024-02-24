@@ -1,0 +1,156 @@
+*{margin: 0; padding: 0rem;box-sizing: border-box}
+
+:root{
+    --bg-main:#A076F9;
+    --bg-card:#D7BBF5;
+    --border-color: #27374D;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3.5rem;
+    margin: 3rem;
+    height: 100vh;
+    background-color: var(--bg-main);
+}
+
+h1{
+    color: #EDE4FF;
+    font-family: "Lexend Deca Light";
+    font-size: 4rem;
+}
+
+span{
+    color: var(--border-color);
+}
+
+#card-section{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 2rem;
+}
+
+/*.card{*/
+/*    width: 10rem;*/
+/*    height: 10rem;*/
+/*    background-color: var(--bg-card);*/
+/*    background-size: contain;*/
+/*    border-radius: .6rem;*/
+/*    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;*/
+/*    padding: 2rem;*/
+/*}*/
+
+/*.card_selected{*/
+/*    border: .2rem solid var(--border-color);*/
+/*}*/
+
+/*.card_match{*/
+/*    border: .2rem solid purple;*/
+/*}*/
+
+.card {
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+}
+
+.card,
+.back-card,
+.front-card {
+    height: 8rem;
+    width: 8rem;
+}
+
+.back-card,
+.front-card {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-card {
+    background: var(--border-color);
+    background-size: contain;
+    border-radius: .6rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.back-card {
+    transform: rotateY(180deg);
+    /*background-color: #6589F9;*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.card_selected{
+    transform: rotateY(180deg);
+}
+
+.card_match .front-card{
+    background-color: var(--bg-card);
+}
+
+
+#button{
+    height: 3rem;
+    width: 9rem;
+    font-size: 1.5rem;
+    background-color: #6528F7;
+    border-radius: 1.2rem;
+    color: #EDE4FF;
+    text-align: center;
+}
+
+@media screen and (max-width:770px){
+    .card,
+    .back-card,
+    .front-card {
+        height: 6rem;
+        width: 6rem;
+}
+}
+
+@media screen and (max-width:550px){
+    .card,
+    .back-card,
+    .front-card {
+        height: 5rem;
+        width: 5rem;
+}
+    #card-section{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 1.5rem;
+} 
+    h1{
+        font-size: 3rem;
+    }
+    #button{
+        height: 3rem;
+    width: 6rem;
+    font-size: 1.1rem;
+    }
+    body{
+        gap: 3rem;
+    }
+}
+@media screen and (max-width:550px){
+    h1{
+        font-size: 2.5rem;
+    }
+    #button{
+        height: 3rem;
+    width: 6rem;
+    font-size: 1.1rem;
+    }
+    body{
+        gap: 3rem;
+    }
+}
+
